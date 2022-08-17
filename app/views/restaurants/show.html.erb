@@ -1,0 +1,9 @@
+<%= render @restaurant %>
+
+<div>
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li><%= review.content %> <%= link_to 'delete', review_path(review), data: { turbo_method: :delete, turbo_confirm: 'Are Your sure ?' }  %> </li>
+    <% end  %>
+  </ul>
+</div>
